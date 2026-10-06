@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Your workspace{% endblock %}
+{% block content %}
+  <header class="form-heading">
+    <p class="eyebrow">YOUR WORKSPACE</p>
+    <h1>You’re signed in, {{ username }}.</h1>
+    <p class="subtitle">Your account is connected and ready to use.</p>
+  </header>
+  <form method="post" action="{{ url_for('logout') }}" class="auth-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <button type="submit" class="secondary-button">Sign out</button>
+  </form>
+{% endblock %}
